@@ -10,112 +10,74 @@ namespace Bothelper
     class Program
     {
         static void Main(string[] args)
+
         {
-            bool SpaceIsOpen = true;
-              while (SpaceIsOpen)
-            {
-                Console.OutputEncoding = System.Text.Encoding.UTF8;
-                Console.WriteLine(Environment.NewLine + " Вітаю, я бот-помічник! Обери команду:");
-                Console.WriteLine(" 1 - Перевірити число на парність");
-                Console.WriteLine(" 2 - Таблиця множення числа");
-                Console.WriteLine(" 3 - Порахувати суму чисел");
-                Console.WriteLine(" 4 - Вивести моє ім’я задом наперед");
-                Console.WriteLine(" 0 - Вийти з програми");
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.WriteLine(Environment.NewLine + " Вітаю, я бот-помічник! Обери команду:");
+            Console.WriteLine(" 1 - Перевірити число на парність");
+            Console.WriteLine(" 2 - Таблиця множення числа");
+            Console.WriteLine(" 3 - Порахувати суму чисел");
+            Console.WriteLine(" 4 - Вивести моє ім’я задом наперед");
+            Console.WriteLine(" 0 - Вийти з програми");
+           
+          
+                int choice = int.Parse(Console.ReadLine());
 
-
-                int UserChoice = int.Parse(Console.ReadLine());
-
-
-                switch (UserChoice)
+                switch (choice)
                 {
                     case 1:
                         Console.WriteLine("Пропишiть число:");
-                        int firstNumber = int.Parse(Console.ReadLine());
-                        if (firstNumber % 2 == 0)
+                        int numberOne = int.Parse(Console.ReadLine());
+                        if (numberOne % 2 == 0)
                         {
-                            Console.WriteLine(firstNumber + " - Число парне!");
+                            Console.WriteLine(numberOne + " - Число парне!");
                         }
                         else
                         {
-                            Console.WriteLine(firstNumber + " - Число непарне!");
+                            Console.WriteLine(numberOne + " - Число непарне!");
                         }
-                        if (UserChoice != 0)
-                        {
-                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
-                            Console.ReadKey();
-                            Console.Clear();
-
-                        }
-
                         break;
                     case 2:
                         Console.WriteLine("Пропишiть число:");
-                        int secondNumber = int.Parse(Console.ReadLine());
-                        for (int a = 1; a < 11; a++)
+                        int numberTwo = int.Parse(Console.ReadLine());
+                        for (int two = 1; two < 11; two++)
                         {
-                            int result = secondNumber * a;
-                            Console.WriteLine($"{secondNumber} x {a} = {result} ");
-                        }
-                        if (UserChoice != 0)
-                        {
-                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
-                            Console.ReadKey();
-                            Console.Clear();
-
+                            int result = numberTwo * two;
+                            Console.WriteLine($"{numberTwo} x {two} = {result} ");
                         }
                         break;
                     case 3:
-                        Console.WriteLine("Пропишiть число:");
-                        int thridNumber = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Введiть будь-яке число:");
+                        int numberThree = int.Parse(Console.ReadLine());
                         int startNumber = 0;
-                        for (int b = 1; b <= thridNumber; b++)
+                        for (int three = 1; three <= numberThree; three++)
                         {
-                            startNumber = startNumber + b;
+                            startNumber = startNumber + three;
                         }
-                        Console.WriteLine("cумма чисел вiд 1 до " + thridNumber + " = " + startNumber);
-                        if (UserChoice != 0)
-                        {
-                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
-                            Console.ReadKey();
-                            Console.Clear();
-
-                        }
+                        Console.WriteLine("cумма чисел вiд 1 до " + numberThree + " = " + startNumber);
                         break;
                     case 4:
                         Console.Write("Ввeдiть iм'я: ");
-                        string userName = Console.ReadLine();
+                        string numberFour = Console.ReadLine();
 
-                        foreach (char four in userName.Reverse())
+                        foreach (char four in numberFour.Reverse())
                         {
                             Console.Write(four);
                         }
 
                         Console.WriteLine();
-                        if (UserChoice != 0)
-                        {
-                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
-                            Console.ReadKey();
-                            Console.Clear();
-
-                        }
                         break;
                     case 0:
-                        Console.WriteLine("Програму завершено, дякую за користування!");
-                        SpaceIsOpen = false;
+                        Console.Clear();
                         break;
                     default:
-                        Console.WriteLine("Команда не вiрна!");
+
                         break;
-                }
-                
-
-
-
-
+                 
 
 
             }
+
         }
     }
 }
-                    
