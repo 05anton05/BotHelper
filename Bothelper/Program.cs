@@ -14,6 +14,7 @@ namespace Bothelper
         {
             bool SpaceIsOpen = true;
             while (SpaceIsOpen)
+            { 
                 Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine(Environment.NewLine + " Вітаю, я бот-помічник! Обери команду:");
             Console.WriteLine(" 1 - Перевірити число на парність");
@@ -38,7 +39,13 @@ namespace Bothelper
                         {
                             Console.WriteLine(firstNumber + " - Число непарне!");
                         }
-                        break;
+                        if (UserChoice != 0)
+                        {
+                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
+                            break;
                     case 2:
                         Console.WriteLine("Пропишiть число:");
                         int secondNumber = int.Parse(Console.ReadLine());
@@ -46,6 +53,12 @@ namespace Bothelper
                         {
                             int result = secondNumber * a;
                             Console.WriteLine($"{secondNumber} x {a} = {result} ");
+                        }
+                        if (UserChoice != 0)
+                        {
+                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
+                            Console.ReadKey();
+                            Console.Clear();
                         }
                         break;
                     case 3:
@@ -57,6 +70,12 @@ namespace Bothelper
                             startNumber = startNumber + b;
                         }
                         Console.WriteLine("cумма чисел вiд 1 до " + thridNumber + " = " + startNumber);
+                        if (UserChoice != 0)
+                        {
+                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
                         break;
                     case 4:
                         Console.Write("Ввeдiть iм'я: ");
@@ -64,21 +83,27 @@ namespace Bothelper
 
                         foreach (char four in userName.Reverse())
                         {
-                         Console.Write(four);
+                            Console.Write(four);
                         }
 
-                         Console.WriteLine();
+                        Console.WriteLine();
+                        if (UserChoice != 0)
+                        {
+                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
                         break;
                     case 0:
                         Console.WriteLine("Програму завершено, дякую за користування!");
-                         SpaceIsOpen = false;
+                        SpaceIsOpen = false;
                         Console.Clear();
                         break;
                     default:
 
                         break;
-                 
 
+                }
 
             }
 
