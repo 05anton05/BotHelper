@@ -12,8 +12,8 @@ namespace Bothelper
         static void Main(string[] args)
 
         {
-            bool SpaceIsOpen = true;
-            while (SpaceIsOpen)
+            bool isContinueWork = true;
+            while (isContinueWork)
             { 
                 Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine(Environment.NewLine + " Вітаю, я бот-помічник! Обери команду:");
@@ -24,9 +24,9 @@ namespace Bothelper
             Console.WriteLine(" 0 - Вийти з програми");
            
           
-                int UserChoice = int.Parse(Console.ReadLine());
+                int userChoice = int.Parse(Console.ReadLine());
 
-                switch (UserChoice)
+                switch (userChoice)
                 {
                     case 1:
                         Console.WriteLine("Пропишiть число:");
@@ -39,13 +39,8 @@ namespace Bothelper
                         {
                             Console.WriteLine(firstNumber + " - Число непарне!");
                         }
-                        if (UserChoice != 0)
-                        {
-                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
-                            break;
+                       
+                        break;
                     case 2:
                         Console.WriteLine("Пропишiть число:");
                         int secondNumber = int.Parse(Console.ReadLine());
@@ -54,28 +49,18 @@ namespace Bothelper
                             int result = secondNumber * a;
                             Console.WriteLine($"{secondNumber} x {a} = {result} ");
                         }
-                        if (UserChoice != 0)
-                        {
-                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
+                        
                         break;
                     case 3:
                         Console.WriteLine("Введiть будь-яке число:");
-                        int thridNumber = int.Parse(Console.ReadLine());
+                        int thirdNumber = int.Parse(Console.ReadLine());
                         int startNumber = 0;
-                        for (int b = 1; b <= thridNumber; b++)
+                        for (int b = 1; b <= thirdNumber; b++)
                         {
                             startNumber = startNumber + b;
                         }
-                        Console.WriteLine("cумма чисел вiд 1 до " + thridNumber + " = " + startNumber);
-                        if (UserChoice != 0)
-                        {
-                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
+                        Console.WriteLine("cумма чисел вiд 1 до " + thirdNumber + " = " + startNumber);
+                        
                         break;
                     case 4:
                         Console.Write("Ввeдiть iм'я: ");
@@ -85,26 +70,28 @@ namespace Bothelper
                         {
                             Console.Write(four);
                         }
-
-                        Console.WriteLine();
-                        if (UserChoice != 0)
-                        {
-                            Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
+                            Console.WriteLine();
                         break;
                     case 0:
                         Console.WriteLine("Програму завершено, дякую за користування!");
-                        SpaceIsOpen = false;
+                        isContinueWork = false;
                         Console.Clear();
                         break;
                     default:
-
                         break;
-
                 }
-
+                if (userChoice != 0)
+                {
+                    Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                else
+                {
+                    Console.WriteLine("Програму завершено, дякую за користування!");
+                    isContinueWork = false;
+                    Console.Clear();
+                }
             }
 
         }
