@@ -12,7 +12,10 @@ namespace Bothelper
         static void Main(string[] args)
 
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            bool isContinueWork = true;
+            while (isContinueWork)
+            { 
+                Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine(Environment.NewLine + " Вітаю, я бот-помічник! Обери команду:");
             Console.WriteLine(" 1 - Перевірити число на парність");
             Console.WriteLine(" 2 - Таблиця множення числа");
@@ -21,61 +24,74 @@ namespace Bothelper
             Console.WriteLine(" 0 - Вийти з програми");
            
           
-                int choice = int.Parse(Console.ReadLine());
+                int userChoice = int.Parse(Console.ReadLine());
 
-                switch (choice)
+                switch (userChoice)
                 {
                     case 1:
                         Console.WriteLine("Пропишiть число:");
-                        int numberOne = int.Parse(Console.ReadLine());
-                        if (numberOne % 2 == 0)
+                        int firstNumber = int.Parse(Console.ReadLine());
+                        if (firstNumber % 2 == 0)
                         {
-                            Console.WriteLine(numberOne + " - Число парне!");
+                            Console.WriteLine(firstNumber + " - Число парне!");
                         }
                         else
                         {
-                            Console.WriteLine(numberOne + " - Число непарне!");
+                            Console.WriteLine(firstNumber + " - Число непарне!");
                         }
+                       
                         break;
                     case 2:
                         Console.WriteLine("Пропишiть число:");
-                        int numberTwo = int.Parse(Console.ReadLine());
-                        for (int two = 1; two < 11; two++)
+                        int secondNumber = int.Parse(Console.ReadLine());
+                        for (int a = 1; a < 11; a++)
                         {
-                            int result = numberTwo * two;
-                            Console.WriteLine($"{numberTwo} x {two} = {result} ");
+                            int result = secondNumber * a;
+                            Console.WriteLine($"{secondNumber} x {a} = {result} ");
                         }
+                        
                         break;
                     case 3:
                         Console.WriteLine("Введiть будь-яке число:");
-                        int numberThree = int.Parse(Console.ReadLine());
+                        int thirdNumber = int.Parse(Console.ReadLine());
                         int startNumber = 0;
-                        for (int three = 1; three <= numberThree; three++)
+                        for (int b = 1; b <= thirdNumber; b++)
                         {
-                            startNumber = startNumber + three;
+                            startNumber = startNumber + b;
                         }
-                        Console.WriteLine("cумма чисел вiд 1 до " + numberThree + " = " + startNumber);
+                        Console.WriteLine("cумма чисел вiд 1 до " + thirdNumber + " = " + startNumber);
+                        
                         break;
                     case 4:
                         Console.Write("Ввeдiть iм'я: ");
-                        string numberFour = Console.ReadLine();
+                        string userName = Console.ReadLine();
 
-                        foreach (char four in numberFour.Reverse())
+                        foreach (char four in userName.Reverse())
                         {
                             Console.Write(four);
                         }
-
-                        Console.WriteLine();
+                            Console.WriteLine();
                         break;
                     case 0:
+                        Console.WriteLine("Програму завершено, дякую за користування!");
+                        isContinueWork = false;
                         Console.Clear();
                         break;
                     default:
-
                         break;
-                 
-
-
+                }
+                if (userChoice != 0)
+                {
+                    Console.WriteLine("\nНатисни будь-яку клавішу, щоб повернутися до головного меню...");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                else
+                {
+                    Console.WriteLine("Програму завершено, дякую за користування!");
+                    isContinueWork = false;
+                    Console.Clear();
+                }
             }
 
         }
