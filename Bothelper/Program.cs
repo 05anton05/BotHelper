@@ -92,6 +92,44 @@ namespace Bothelper
                     isContinueWork = false;
                     Console.Clear();
                 }
+                //ArrayS.
+                
+                int[] array5 = { -20, -10, 0, 10, 20, 30, 40, 50, 60 };
+                Console.Write(" массив чисел: ");
+                for (int i = 0; i < array5.Length; i++)
+                {
+                    Console.Write(" " + array5[i] + ";");
+                }
+
+                Console.WriteLine("\n введите число, которое хотите найти в массиве: ");
+                int number = int.Parse(Console.ReadLine());
+                int leftSide = 0;
+                int rightSide = array5.Length - 1;
+                while (leftSide <= rightSide)
+                {
+                    int center = (leftSide + rightSide) / 2;
+                    if (array5[center] == number)
+                    {
+                        Console.WriteLine("Индекс числа " + number + " в массиве: " + center);
+                        break;
+                    }
+                    else if (array5[center] < number)
+                    {
+                        leftSide = center + 1;
+                    }
+                    else
+                    {
+                        rightSide = center - 1;
+                    }
+                }
+                if (leftSide > rightSide)
+                {
+                    Console.WriteLine("Число " + number + " не найдено в массиве.");
+                }
+                else
+                {
+                    Console.WriteLine("Число " + number + " найдено в массиве.");
+                }
             }
 
         }
