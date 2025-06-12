@@ -127,20 +127,24 @@ namespace Bothelper
                     case 7:
                         string[,] schedule = {
                             {"Понедiлок:", "Кетасушi"},
-                            {"Вiвторок:", "Англiйська та айтiшка"},
-                            {"Середа:", "айтiшка та заняття з ментором" },
-                            {"Четвер:", "Англiйcька та кетасушi" },
-                            {"П'ятниця:", "Кетасушi" },
-                            {"Суббота:", "кетасушi" },
-                            {"Недiля:", "Вiдпочинок та айтiшка" } };
+                            {"Вiвторок:",  "Англiйська та айтiшка"},
+                            {"Середа:",    "айтiшка та заняття з ментором" },
+                            {"Четвер:",    "Англiйcька та кетасушi" },
+                            {"П'ятниця:",  "Кетасушi" },
+                            {"Суббота:",   "кетасушi" },
+                            {"Недiля:",    "Вiдпочинок та айтiшка" } };
                         Console.WriteLine("Розклад занять на тиждень:");
                         foreach(string succes in schedule)
                         {
-                            Console.WriteLine(succes);
+                            Console.WriteLine((succes));
                         }
                         break;
                     case 8:
-                        List<string> cart = new List<string> { "Банан", "Кiвi", "Ананасовий сiк", "Шпинат" };
+                        List<string> cart = new List<string>();
+                        cart.Add("Банан");
+                        cart.Add("Кiвi");
+                        cart.Add("Ананасовий сiк");
+                        cart.Add("Шпинат");
                         Console.WriteLine("Вмiст кошика:");
                         foreach (string item in cart)
                         {
@@ -150,11 +154,11 @@ namespace Bothelper
                     case 9:
                         Dictionary<string, string> phoneBook = new Dictionary<string, string>()
                         {
-                        {"Антон:","380509521905"},
-                        {"Мiша:","380684207236"},
-                        {"Марина:","380978193567"},
-                        {"Даша:","380955482582"},
-                        {"Сергiй:","380635337296"}};
+                        {"Антон:","38050952*905"},
+                        {"Мiша:","3806802*7236"},
+                        {"Марина:","38097*193567"},
+                        {"Даша:","3809554*2582"},
+                        {"Сергiй:","380635*37296"}};
                         Console.WriteLine("Телефонна книга:");
                         foreach (var list in phoneBook)
                         {
