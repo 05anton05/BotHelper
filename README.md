@@ -1,5 +1,5 @@
 The new version of BotHelper.
-This version includes different parts of menu who you can use
+This version includes different parts of menu which you can use
 The methods who was used:
 - call a Console;
 - construction switch;
