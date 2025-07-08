@@ -7,4 +7,5 @@ The methods which was used:
 - binary search of array
 - method of working with collections;
 - if,else;
+- added new punkts of menu who includes the methods
 The rules are follow coding style and code conventions.
