@@ -29,9 +29,7 @@ namespace Bothelper
         
         static (string longest, string shortest) FindLongestAndShortest(string[] words)
         {
-            if (words == null || words.Length == 0)
-                throw new ArgumentException("Масив слів не може бути порожнім або null.");
-
+            
             string longest = words[0];
             string shortest = words[0];
 
@@ -84,8 +82,6 @@ namespace Bothelper
         }
         static int[] CalculateSumAndProduct(int[] numbers, out int sum, out int product)
         {
-           
-           
             sum = 0;
             product = 1;
             foreach (int number in numbers)
@@ -247,11 +243,14 @@ namespace Bothelper
                             {"П'ятниця:",  "Кетасушi" },
                             {"Суббота:",   "кетасушi" },
                             {"Недiля:",    "Вiдпочинок та айтiшка" } };
+
                         Console.WriteLine("Розклад занять на тиждень:");
-                        foreach (string succes in schedule)
+
+                        foreach (var item in schedule)
                         {
-                            Console.WriteLine((succes));
+                            Console.WriteLine((schedule));
                         }
+
                         break;
                     case 8:
                         List<string> cart = new List<string>();
@@ -390,18 +389,7 @@ namespace Bothelper
                     isContinueWork = false;
                     Console.Clear();
                 }
-                
-
-
             }
-            
-            
-
         }
-        
-
-
-
-
     }
 }
