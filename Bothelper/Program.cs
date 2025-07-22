@@ -39,7 +39,7 @@ namespace Bothelper
                 {
                     longest = word;
                 }
-                else 
+                else
                 {
                     shortest = word;
                 }
